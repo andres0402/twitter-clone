@@ -73,10 +73,10 @@ export function Tweets({tweets}){
                             <button className="flex flex-col border-zinc-800 border-[1px] border-t-0 py-2 px-3 hover:bg-zinc-950 transition-all">
                                 <div className="flex flex-row gap-2 items-start">
                                     <button className="rounded-full hover:opacity-85 transition-all">
-                                        <img src={tweet.profilePic} width={"40px"} className="rounded-full"/>
+                                        <img src={tweet.profile_pic} width={"40px"} className="rounded-full"/>
                                     </button>
                                     <div className="group flex flex-row gap-1 items-center">
-                                        <a href="" className="text-white font-bold group-hover:underline">{tweet.name}</a>
+                                        <a href="" className="text-white font-bold group-hover:underline">{tweet.u_name}</a>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled" width="20" color="#38bdf8" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                         <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor" />

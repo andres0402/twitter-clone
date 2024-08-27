@@ -2,29 +2,47 @@
 import { Tweets } from '../components/Tweets';
 import Layout from '../layouts/Layout.astro';
 
+const URL = "http://localhost:3000/tweets";
+
+async function fetchTweets() {
+  try {
+    const res = await fetch(URL);
+    if (!res.ok) {
+      throw new Error('Error en la solicitud: ' + res.statusText);
+    }
+    const json = await res.json();
+    return json // Aquí manejas los datos JSON
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+//const tweets = await fetchTweets();
+
+
 const tweets = [
 	{
-		name: "Out Of Context Football",
+		u_name: "Out Of Context Football",
 		username: "@nocontextfooty",
-		profilePic: "https://pbs.twimg.com/profile_images/1112323410837815296/wxhDfc5D_200x200.jpg",
+		profile_pic: "https://pbs.twimg.com/profile_images/1112323410837815296/wxhDfc5D_200x200.jpg",
 		content: "",
 		img: "https://pbs.twimg.com/media/GV6LF5MWMAAtxP-?format=jpg&name=small",
 		likes: 123,
 		liked: true
 	},
 	{
-		name: "Barca Worldwide",
+		u_name: "Barca Worldwide",
 		username: "@BarcaWorldwide",
-		profilePic: "https://pbs.twimg.com/profile_images/1580306705178427392/tcAC_Yju_400x400.png",
+		profile_pic: "https://pbs.twimg.com/profile_images/1580306705178427392/tcAC_Yju_400x400.png",
 		content: "Nobody else can do this 😮‍💨",
 		img: "https://pbs.twimg.com/media/GVpsXWVWAAEN5y6?format=jpg&name=small",
 		likes: 123,
 		liked: false
 	},
 	{
-		name: "San Marino Fútbol 🇸🇲",
+		u_name: "San Marino Fútbol 🇸🇲",
 		username: "@SanMarinoTeam",
-		profilePic: "https://pbs.twimg.com/profile_images/1790442565205893121/hwsihkdf_400x400.jpg",
+		profile_pic: "https://pbs.twimg.com/profile_images/1790442565205893121/hwsihkdf_400x400.jpg",
 		content: "Cada uno festeja lo que puede.",
 		img: "https://pbs.twimg.com/media/GVma9ogXIAAS4pX?format=jpg&name=small",
 		likes: 123,

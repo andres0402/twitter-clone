@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props;
 
 import Aside from '../components/Aside.astro';
+import AsideRight from '../components/AsideRight.astro';
 ---
 
 <!doctype html>
@@ -24,6 +25,9 @@ import Aside from '../components/Aside.astro';
 				<Aside/>
 			</div>
 			<slot />
+			<div class="flex justify-start h-screen">
+				<AsideRight/>	
+			</div>
 		</main>
 	</body>
 </html>
